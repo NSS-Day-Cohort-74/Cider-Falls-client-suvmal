@@ -12,17 +12,17 @@ document.addEventListener(
             locationId
         },
         },
-}) => type === "guest" && window.alert(`${locationId}`)
-)
+}) => type === "guest" && window.alert(`${locationId}`))
 
 export const genGuestHtml = () => 
     `<ul>
         ${
-            guests.map((guest) => `
+            guests.map(({id,destinationId, firstName, lastName}) => `
                 <li
                         data-type="guest"
-                        data-locationId="${guest.destinationId}">
-                        <h2>${guest.firstName} ${guest.lastName}</h2>
+                        data-locationId="${destinationId}"
+                        data-id="${id}">
+                        <h2>${firstName} ${lastName}</h2>
                 </li>
                 `)
                 .join("")
