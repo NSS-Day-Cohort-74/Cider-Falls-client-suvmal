@@ -1,7 +1,19 @@
-import {getDestinations, getGuests} from "./database.js"
+import {getDestinations, getGuests, getServiceDestinations, getServices } from "./database.js"
 
 const destinations = getDestinations();
 const guests = getGuests();
+const services = getServices();
+
+
+
+const getDestinationServices = (destId) => 
+    getServiceDestinations()
+    .filter(({destinationId})=> destId === destinationId)
+    .map(({serviceId})=> services.find(({id}) => id === serviceId).type)
+    .map((name) => `<li>${name}</li>`)
+    .join("")
+
+
 
 const getGuestsInArea = (clickedElementId) =>
     guests.filter(({ destinationId }) => destinationId === parseInt(clickedElementId)).length
@@ -26,6 +38,9 @@ export const destinationsList = () =>
                         data-section="${section}"
                         data-id="${id}">${name}
                     </h2>
+                    <ul>
+                    ${getDestinationServices(id)}
+                    </ul>
                 </div>
                 `)
                 .join("")
