@@ -3,3 +3,17 @@
     flex-direction: row;
     flex-basis: 75%;
 }
+
+#guests-li {
+    font-size: 0.5rem;
+    
+}
+
+h1 {
+    text-align: center;
+    color: orange;
+}
+
+/* #services-div {
+
+} */

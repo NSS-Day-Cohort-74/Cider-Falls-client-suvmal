@@ -3,38 +3,32 @@ import {getDestinations, getGuests} from "./database.js"
 const destinations = getDestinations();
 const guests = getGuests();
 
-const getGuestsInDest = (clickid) =>
-    guests.filter(({ destinationId }) => destinationId === clickid).length
+const getGuestsInArea = (clickedElementId) =>
+    guests.filter(({ destinationId }) => destinationId === parseInt(clickedElementId)).length
 
 document.addEventListener(
     "click",
-    ({
-        target: {
-        innerText,
-        dataset:{
-            type,
-            section,
-            id
-        },
-        },
-}) => type === "destination" && window.alert(`${getGuestsInDest(id)}}`)
-)
+    (clickTarget) => {
+        if (clickTarget.target.dataset.type === "destination") {
+             window.alert(`There are  ${getGuestsInArea(clickTarget.target.dataset.id)} guests in this area.`)
+        }
+    }
+);
+
 
 
 
 export const destinationsList = () => 
-    `<ul>
-        ${
-            destinations.map(({id,section, name}) => `
-                <li
+    `${destinations.map(({id,section, name}) => `
+                <div class="destination">
+                    <h2
                         data-type="destination"
                         data-section="${section}"
-                        data-id="${id}">
-                        <h2>${name}</h2>
-                </li>
+                        data-id="${id}">${name}
+                    </h2>
+                </div>
                 `)
                 .join("")
             }
-                </ul>
                 `
 

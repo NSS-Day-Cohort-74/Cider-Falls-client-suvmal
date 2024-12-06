@@ -41,7 +41,7 @@ const database = {
         { id: 9, type: "hiking" },
         { id: 10, type: "zip lines" }
     ],
-    destinationServices: [
+    serviceDestinations: [
         { id: 1, destinationId: 1, serviceId: 1 },
         { id: 2, destinationId: 1, serviceId: 2 },
         { id: 3, destinationId: 1, serviceId: 3 },
@@ -74,5 +74,9 @@ export const getDestinations = () =>
 export const getServices = () => 
     structuredClone(database.services)
 
-export const getDestinationServices = () => 
-    structuredClone(database.destinationServices)
+export const getServiceDestinations = () => 
+    structuredClone(database.serviceDestinations)
+
+
+
+
