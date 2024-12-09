@@ -39,18 +39,34 @@ document.addEventListener("click",
 
 
 
-    
-
 export const genServices = () => `
-        <p>Park Services: </p> 
-        ${services.map(({ type, id }) => `
+        <p><b>Park Services:&nbsp; </b></p> 
+        ${services
+					.map(
+						({ type, id }, index) => `
                  <p
+                 class="service"
                  data-id="${id}"
                  data-type="service"
                  data-name="${type}"
-                 >${type}, </p>
-                 `
-          ).join("")
-        }
-        `
+                 >${type}${index < services.length - 1 ? ",&nbsp;" : ""}</p>
+                 `,
+					)
+					.join("")}
+        `;
+
+    
+
+// export const genServices = () => `
+//         <p>Park Services: </p> 
+//         ${services.map(({ type, id }) => `
+//                  <p
+//                  data-id="${id}"
+//                  data-type="service"
+//                  data-name="${type}"
+//                  >${type}, </p>
+//                  `
+//           ).join("")
+//         }
+//         `
 
