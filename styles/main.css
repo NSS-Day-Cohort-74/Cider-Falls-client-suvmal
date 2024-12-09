@@ -1,19 +1,86 @@
-#container {
+body {
+    background: #453129;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #254b25;
+  color: #f5b743;
+  text-shadow: -3px 3px black;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+main {
+  justify-content: space-between;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #f5b743;
+  text-shadow: -2px 2px black;
+}
+
+#services-div {
+  display: flex;
+  justify-content: center;
+  background: #d2992d;
+  margin: 20px;
+  padding: 10px;
+}
+
+#table {
+  display: flex;
+  
+}
+
+#destinations {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.destination {
+  border: 2px solid #f5b743;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  margin: 20px;
+  background: #254b25
+}
+
+#guests {
+  flex: 1;
+  border: 2px solid #f5b743;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  text-align: left;
+  background: #254b25;
+  max-width: 20%;
+}
+
+footer {
+  background: #254b25;
+  color: #f5b743;
+  padding: 20px;
+}
+
+a {
+  color: orange;
+}
+
+.contact-info {
+    text-align: center;
     display: flex;
     flex-direction: row;
-    flex-basis: 75%;
+    justify-content: space-evenly;
 }
-
-#guests-li {
-    font-size: 0.5rem;
-    
-}
-
-h1 {
-    text-align: center;
-    color: orange;
-}
-
-/* #services-div {
-
-} */

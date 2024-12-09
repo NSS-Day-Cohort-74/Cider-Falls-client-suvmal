@@ -1,5 +1,5 @@
 import {genGuestHtml} from "./guests.js"
-import { destinationsList } from "./destinations.js";
+import { createDestinationsList } from "./destinations.js";
 import {genServices} from "./services.js";
 
 const destinationsContainer = document.querySelector("#destinations")
@@ -13,4 +13,4 @@ serviceContainer.innerHTML = genServices()
 guestContainer.innerHTML = genGuestHtml()
 
 
-destinationsContainer.innerHTML = destinationsList()
+destinationsContainer.innerHTML = createDestinationsList()
