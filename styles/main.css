@@ -116,6 +116,10 @@ background: #1d633c;
 box-shadow: -5px 5px orange;
 }
 
+li {
+  font-size: 18px;
+}
+
 li:hover {
 font-size: 18px;
 color: #f5b743;
@@ -179,6 +183,7 @@ text-shadow: 0 0 5px white;
   text-align: center;
   text-shadow: 0 0 5px #f5b743;
   font-weight: bold;
+  font-size: 18px;
   background: #254b25;
   max-width: 10%;
   transition: transform 0.5s ease;
@@ -192,5 +197,6 @@ text-shadow: 0 0 5px white;
 
   label {
     font-weight: bold;
+    font-size: 18px;
     text-shadow: 0 0 5px #f5b743;
   }
