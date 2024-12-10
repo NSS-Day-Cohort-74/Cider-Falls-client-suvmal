@@ -15,9 +15,9 @@ document.addEventListener("click", (clickTarget) => {
 	}
 });
 
-export const genGuestHtml = () => `
+export const genGuestHtml = (guestKey = guests) => `
         <ul><h2>Guests</h2>
-        ${guests
+        ${guestKey
 					.map(
 						({ id, destinationId, name }) => `
                 <li id="guest-li"
@@ -31,4 +31,3 @@ export const genGuestHtml = () => `
 					.join("")}
         </ul>
         `;
-

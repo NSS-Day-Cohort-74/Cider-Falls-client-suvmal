@@ -1,5 +1,5 @@
 import { getDestinations, getGuests } from "./database.js";
-import { getGuestDestination } from "./guests.js";
+import { genGuestHtml } from "./guests.js";
 
 const destinations = getDestinations();
 const guests = getGuests();
@@ -8,7 +8,6 @@ document.addEventListener(
 	"click",
 	({
 		target: {
-			innerHtml,
 			dataset: { type },
 		},
 	}) => {
@@ -29,21 +28,7 @@ document.addEventListener(
 const updateData = (guestName, newDestinationId) => {
 	guests.find((guest) => guest.name === guestName).destinationId =
 		newDestinationId;
-	return `<ul><h2>Guests</h2>
-          ${guests
-						.map(
-							({ id, destinationId, name }) => `
-                <li id="guest-li"
-                        data-type="guest"
-                        data-locationId="${destinationId}"
-                        data-id="${id}">
-                        ${name} (${getGuestDestination(destinationId)})
-                </li>
-                `,
-						)
-						.join("")}
-        </ul>
-        `;
+	return genGuestHtml(guests);
 };
 
 export const createDropdowns = () => {
@@ -65,4 +50,3 @@ export const createDropdowns = () => {
 
 	return `${genDropdown(guests, "guest")} ${genDropdown(destinations, "destination")}${genButton()}`;
 };
-
