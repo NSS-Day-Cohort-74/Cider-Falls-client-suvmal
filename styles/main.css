@@ -47,7 +47,7 @@ justify-content: center;
 background: #d2992d;
 margin: 20px;
 padding: 10px;
-border-radius: 50px;
+border-radius: 20px;
 font-size: 18px;
 }
 
@@ -87,9 +87,24 @@ padding: 20px;
 margin: 20px;
 text-align: left;
 background: #254b25;
-max-width: 20%;
+width: 40%;
 transition: transform 0.5s ease;
 }
+.dropdown {
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  background: #254b25;
+  width: 50%;
+  
+}
+
+option {
+  background: #f5b743;
+}
+
 
 #guests:hover {
 transform: translateX(5px) translateY(-5px);
@@ -141,3 +156,35 @@ transform: scale(150%);
 .service:hover {
 text-shadow: 0 0 5px white;
 }
+
+#dropdowns {
+  display: flex;
+  justify-content: center;
+  background: #d2992d;
+  border-radius: 20px;
+}
+
+#move-button {
+  flex: 1;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  text-shadow: 0 0 5px #f5b743;
+  font-weight: bold;
+  background: #254b25;
+  max-width: 10%;
+  transition: transform 0.5s ease;
+}
+
+#move-button:hover {
+  transform: translateX(5px) translateY(-5px);
+  background: #1d633c;
+  box-shadow: -5px 5px orange;
+  }
+
+  label {
+    font-weight: bold;
+    text-shadow: 0 0 5px #f5b743;
+  }

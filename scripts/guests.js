@@ -22,7 +22,7 @@ export const genGuestHtml = () => `
                         data-type="guest"
                         data-locationId="${destinationId}"
                         data-id="${id}">
-                        ${name}
+                        ${name} (${getGuestDestination(destinationId)})
                 </li>
                 `)
                 .join("")
