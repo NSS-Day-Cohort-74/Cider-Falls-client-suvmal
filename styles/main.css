@@ -87,7 +87,7 @@ padding: 20px;
 margin: 20px;
 text-align: left;
 background: #254b25;
-width: 40%;
+max-width: 25%;
 transition: transform 0.5s ease;
 }
 .dropdown {
@@ -99,6 +99,10 @@ transition: transform 0.5s ease;
   background: #254b25;
   width: 50%;
   
+}
+
+.dropdown select {
+  background: #f5b743;
 }
 
 option {
@@ -162,6 +166,8 @@ text-shadow: 0 0 5px white;
   justify-content: center;
   background: #d2992d;
   border-radius: 20px;
+  margin: 20px;
+  padding: 5px;
 }
 
 #move-button {
@@ -181,7 +187,7 @@ text-shadow: 0 0 5px white;
 #move-button:hover {
   transform: translateX(5px) translateY(-5px);
   background: #1d633c;
-  box-shadow: -5px 5px orange;
+  box-shadow: -5px 5px black;
   }
 
   label {
